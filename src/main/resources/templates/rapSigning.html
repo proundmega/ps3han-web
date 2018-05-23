@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Rap signing tool</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div th:replace='fragments/header-commons :: include'/>
+        <div class='content'>
+            <h1>Rap signing tool for PS3 STUFF databases</h1>
+            <p>This tool signs all raps found on a PS3 STUFF database. In order to make it work you need to provide 3 files:</p>
+            <form form method="post" enctype="multipart/form-data" th:action="@{/signing/rap}" th:object="${rapSigningDTO}">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">File name</th>
+                            <th scope="col">Uploaded file</th>
+                            <th scope="col">Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="row">
+                            <td><label>act.dat</label></td>
+                            <td><input type="file" th:field='*{actDat}' th:required="required"/></td>
+                            <td>Comes from your ps3</td>
+                        </tr>
+                        <tr scope="row">
+                            <td>idps.hex</td>
+                            <td><input type="file" th:field='*{idspHex}' th:required="required"/></td>
+                            <td>Comes from your ps3</td>
+                        </tr>
+                        <tr scope="row">
+                            <td>database</td>
+                            <td><input type='file' th:field='*{database}' th:required="required"/></td>
+                            <td>Database of games used on PSN Stuff app; either made by yourself or found on internet</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button>Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

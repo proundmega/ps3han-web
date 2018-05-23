@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+   ps3xploid:
+      image: proundmega/ps3xploidtools
+      build: ./ps3xploidtools/.
+      ports:
+         - 80:8080/tcp

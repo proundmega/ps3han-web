@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO administrar titulo</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div th:fragment='include'>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous"/>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="" th:href="@{/css/main.css}"/>
+
+            <header class="navbar navbar-default" role="banner">
+                <div class="main-text navbar-header" id='header'>
+                    Ps3xploid tools
+                </div>
+                <div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a th:href="@{/}">Index</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/signing/rap}">Sign rap files</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+    </body>
+</html>
